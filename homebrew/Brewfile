@@ -1,0 +1,48 @@
+tap "homebrew/services"
+
+### Shell utils
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+
+### CLIs and Tools
+# non-system git apple git blegh
+brew "git"
+# Official Amazon AWS command-line interface
+brew "awscli"
+## Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+
+### Editors, Apps, TTY
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# GPU-based terminal emulator
+# Opt to install via sh script instead @ https://sw.kovidgoyal.net/kitty/binary/
+cask "kitty"
+
+# Security / Utils / Misc
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+
+### Fonts
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-mononoki-nerd-font"
+cask "font-source-code-pro"
+cask "font-symbols-only-nerd-font"
+
