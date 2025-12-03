@@ -9,6 +9,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Personal bin scripts
 export PATH="$HOME/bin:$PATH"
 
+# things like uv, poetry, etc
+export PATH="$HOME/.local/bin:$PATH"
+
 # Homebrew bundle file
 export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/homebrew/Brewfile"
 
