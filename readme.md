@@ -2,6 +2,8 @@
 
 ## Basic setup
 
+### Install Homebrew and bundled casks/brews
+
 Install homebrew via [instructions on Homebrew's homepage](https://brew.sh/)
 
 ```sh
@@ -28,6 +30,10 @@ brew bundle cleanup
 # then, if all looks ok
 brew bundle cleanup -f
 ```
+
+### Install Kitty as your terminal if you want (it's nice)
+
+Install Kitty via the install instructions in the [Kitty docs](https://sw.kovidgoyal.net/kitty/).
 
 ## Additional steps
 
