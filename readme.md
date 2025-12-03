@@ -2,7 +2,7 @@
 
 ## Basic setup
 
-### Install Homebrew and bundled casks/brews
+### 1. Install Homebrew and bundled casks/brews
 
 Install homebrew via [instructions on Homebrew's homepage](https://brew.sh/)
 
@@ -16,32 +16,87 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | 
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 ```
 
-Install Homebrew using bundle (see `man brew` for info on `brew bundle usage`). The
-Brewfile is the one in this repo - `HOMEBREW_BUNDLE_FILE` is set in `~/.zprofile`.
+You should run `brew install git` too at this point, just so you can clone this repo
+with the non-system apple git version.
+
+### 2. Clone this repo
+
+Clone and cd into this repo. Note that the rest of this guide assumes you're
+cloning the repo into ~/dotfiles.
 
 ```sh
+git clone git@github.com:thomas-davidoff/dotfiles.git
+cd dotfiles
+```
+
+### 3. Install homebrews
+
+Run `brew bundle install --file homebrew/Brewfile` to install all the things
+(see `man brew` for info on `brew bundle usage`).
+
+Note that you can drop `-f homebrew/Brewfile` later on as `HOMEBREW_BUNDLE_FILE`
+will be made available in the environment, and will point to `~/dotfiles/homebrew/Brewfile`:
+
+```sh
+# can run this alone later, when you want to update stuff
 brew bundle
 ```
 
-If you want to do a cleanup (if this ain't your first time installing things with brew):
+If you want to do a cleanup (if this ain't your first time installing things
+with brew and want to get rid of anything else hanging around).
 
 ```sh
-brew bundle cleanup
+brew bundle cleanup --file homebrew/Brewfile
 # then, if all looks ok
-brew bundle cleanup -f
+brew bundle cleanup -f --file homebrew/Brewfile
 ```
 
-### Install Kitty as your terminal if you want (it's nice)
+### 4. Stow this config
+
+[Stow](https://github.com/aspiers/stow) is basically just a symlink QoL tool.
+
+If you already have customizations in your config files, make a back up of them.
+With `stow` installed, you can simply run `stow homebrew kitty nvim zsh`.
+
+Voila. Now you have symlinked config files:
+
+```sh
+ls -l ~/.zshrc
+lrwxr-xr-x@ 1 schleeb  staff  19 Jun  9 23:31 /Users/schleeb/.zshrc -> dotfiles/zsh/.zshrc
+```
+
+### 5. Install Kitty
 
 Install Kitty via the install instructions in the [Kitty docs](https://sw.kovidgoyal.net/kitty/).
+Note: Kitty can be installed with brew instead if ya want.
+
+If you're lazy, run:
+
+```sh
+# inspect the script with `less` if you want first, before piping directly
+# to sh. `launch=n` just tells the installer not to launch kitty post-install.
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
+```
+
+Update Kitty by re-running the same script you used to install it.
 
 Kitty is configured via the `~/.config/kitty` dir. Requires multiple tools and
 fonts to be pre-installed like `fzf` for the marker-based search functionality
 (which - anyone know how to make that way easier to use?) and `nerd-symbols` fonts.
 
-## Additional steps
+### 5. Open kitty
+
+When you open Kitty, you should be pretty much completely good to go. You may
+see a warning from p10k telling you that it detected console output during
+initialization. This is likely because you don't have extra things installed
+like uv for Python management. See below.
+
+## Additional setup
 
 ### Install uv for Python management
+
+Pyenv is great, but it doesn't do everything. `uv` isn't really my choice for
+managing Python itself, but it's a great tool that *can* do it, so:
 
 See [uv docs](https://docs.astral.sh/uv/getting-started/installation/) for
 proper docs on installing uv.
@@ -53,7 +108,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 Ensure `"$HOME/.local/bin"` is prepended to path. `uv` may edit your config
-against your will, which is annoying.
+against your will, which is annoying. Note that when using the `.zprofile` config
+from this repo, it is prepended, so you don't need to do anything here.
 
 ### Git Signing
 
