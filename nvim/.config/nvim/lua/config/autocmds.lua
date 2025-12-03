@@ -14,4 +14,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Open config file in a new tab
+vim.api.nvim_create_user_command('Config', function()
+  vim.cmd 'tabnew ~/.config/nvim/init.lua'
+end, {})
+
 -- Add more autocommands here as needed

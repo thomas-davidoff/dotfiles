@@ -25,6 +25,8 @@ end)
 
 -- Indentation
 vim.o.breakindent = true -- Enable break indent
+vim.o.expandtab = true -- Enable expanding tabs to spaces
+vim.o.shiftwidth = 4
 
 -- Undo
 vim.o.undofile = true -- Save undo history to file
