@@ -21,6 +21,8 @@ brew "fzf"
 brew "jq"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# CLI for Node.js style checker and lint tool for Markdown files
+brew "markdownlint-cli"
 
 ### Editors, Apps, TTY
 # Ambitious Vim-fork focused on extensibility and agility
@@ -45,4 +47,3 @@ cask "font-hack-nerd-font"
 cask "font-mononoki-nerd-font"
 cask "font-source-code-pro"
 cask "font-symbols-only-nerd-font"
-
