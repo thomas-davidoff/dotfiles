@@ -14,6 +14,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Homebrew bundle file
 export HOMEBREW_BUNDLE_FILE="$HOME/.homebrew/Brewfile"
+export HOMEBREW_NO_ANALYTICS=1
 
 # AWS pager
 export AWS_PAGER=""
