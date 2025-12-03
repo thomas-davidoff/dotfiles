@@ -55,9 +55,20 @@ brew bundle cleanup -f --file homebrew/Brewfile
 
 [Stow](https://github.com/aspiers/stow) is basically just a symlink QoL tool.
 
-If you already have customizations in your config files, make a back up of them.
-With `stow` installed, you can simply run `stow homebrew kitty nvim zsh`.
+This guide assumes you want to discard your existing dotfiles and use these.
+So, naturally, prior to running `stow`, you should move any potentially conflicting
+files from their target locations to a backup. For example:
 
+```sh
+mv ~/.zshrc ~/.zshrc.bak
+```
+
+If I wanted to, I could copy what I wanted from my old config to the appropriate
+location after running stow. With that said, run:
+
+```sh
+stow homebrew kitty nvim zsh
+```
 Voila. Now you have symlinked config files:
 
 ```sh
