@@ -65,24 +65,6 @@ ls -l ~/.zshrc
 lrwxr-xr-x@ 1 schleeb  staff  19 Jun  9 23:31 /Users/schleeb/.zshrc -> dotfiles/zsh/.zshrc
 ```
 
-### 5. Install Kitty
-
-Install Kitty via the install instructions in the [Kitty docs](https://sw.kovidgoyal.net/kitty/).
-Note: Kitty can be installed with brew instead if ya want.
-
-If you're lazy, run:
-
-```sh
-# inspect the script with `less` if you want first, before piping directly
-# to sh. `launch=n` just tells the installer not to launch kitty post-install.
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
-```
-
-Update Kitty by re-running the same script you used to install it.
-
-Kitty is configured via the `~/.config/kitty` dir. Requires multiple tools and
-fonts to be pre-installed like `fzf` for the marker-based search functionality
-(which - anyone know how to make that way easier to use?) and `nerd-symbols` fonts.
 
 ### 5. Open kitty
 
