@@ -13,7 +13,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Homebrew bundle file
-export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/homebrew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/.homebrew/Brewfile"
 
 # AWS pager
 export AWS_PAGER=""

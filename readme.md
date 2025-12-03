@@ -44,7 +44,7 @@ Run `brew bundle install --file homebrew/Brewfile` to install all the things
 (see `man brew` for info on `brew bundle usage`).
 
 Note that you can drop `-f homebrew/Brewfile` later on as `HOMEBREW_BUNDLE_FILE`
-will be made available in the environment, and will point to `~/dotfiles/homebrew/Brewfile`:
+will be made available in the environment, and will point to `~/.homebrew/Brewfile`:
 
 ```sh
 # can run this alone later, when you want to update stuff
