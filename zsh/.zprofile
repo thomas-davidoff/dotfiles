@@ -28,3 +28,4 @@ export GPG_TTY=$(tty)
 # there's like 3 that do
 export XDG_CACHE_HOME="$HOME/.cache"
 
+export EDITOR="nvim"
