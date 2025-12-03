@@ -29,7 +29,16 @@ git clone git@github.com:thomas-davidoff/dotfiles.git
 cd dotfiles
 ```
 
-### 3. Install homebrews
+### 3. Clone p10k repo to ZSH Custom directory
+
+If you want to use the `p10k` prompt, you'll need to add the custom theme to the
+`ohmyzsh` custom directory:
+
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
+
+### 4. Install homebrews
 
 Run `brew bundle install --file homebrew/Brewfile` to install all the things
 (see `man brew` for info on `brew bundle usage`).
@@ -51,7 +60,7 @@ brew bundle cleanup --file homebrew/Brewfile
 brew bundle cleanup -f --file homebrew/Brewfile
 ```
 
-### 4. Stow this config
+### 5. Stow this config
 
 [Stow](https://github.com/aspiers/stow) is basically just a symlink QoL tool.
 
@@ -69,6 +78,7 @@ location after running stow. With that said, run:
 ```sh
 stow homebrew kitty nvim zsh
 ```
+
 Voila. Now you have symlinked config files:
 
 ```sh
@@ -76,8 +86,7 @@ ls -l ~/.zshrc
 lrwxr-xr-x@ 1 schleeb  staff  19 Jun  9 23:31 /Users/schleeb/.zshrc -> dotfiles/zsh/.zshrc
 ```
 
-
-### 5. Open kitty
+### 6. Open kitty
 
 When you open Kitty, you should be pretty much completely good to go. You may
 see a warning from p10k telling you that it detected console output during
