@@ -35,6 +35,10 @@ brew bundle cleanup -f
 
 Install Kitty via the install instructions in the [Kitty docs](https://sw.kovidgoyal.net/kitty/).
 
+Kitty is configured via the `~/.config/kitty` dir. Requires multiple tools and
+fonts to be pre-installed like `fzf` for the marker-based search functionality
+(which - anyone know how to make that way easier to use?) and `nerd-symbols` fonts.
+
 ## Additional steps
 
 ### Install uv for Python management
