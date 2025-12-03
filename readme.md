@@ -1,5 +1,34 @@
 # .files
 
+## Basic setup
+
+Install homebrew via [instructions on Homebrew's homepage](https://brew.sh/)
+
+```sh
+# probably doesn't actually need bash but whatever. Not gonna check.
+
+# if you want to inspect it first:
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | less
+
+# do the install
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+```
+
+Install Homebrew using bundle (see `man brew` for info on `brew bundle usage`). The
+Brewfile is the one in this repo - `HOMEBREW_BUNDLE_FILE` is set in `~/.zprofile`.
+
+```sh
+brew bundle
+```
+
+If you want to do a cleanup (if this ain't your first time installing things with brew):
+
+```sh
+brew bundle cleanup
+# then, if all looks ok
+brew bundle cleanup -f
+```
+
 ## Additional steps
 
 ### Install uv for Python management
