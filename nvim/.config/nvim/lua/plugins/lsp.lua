@@ -81,6 +81,14 @@ return {
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
+      bashls = {
+        filetypes = { 'sh', 'bash', 'zsh' },
+      },
+
+      terraformls = {
+        filetypes = { 'terraform' },
+      },
+
       lua_ls = {
         settings = {
           Lua = {
@@ -104,6 +112,9 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua', -- Lua formatter
+      'shellcheck', -- Bash/shell linter
+      'shfmt', -- Shell formatter
+      'tflint', -- terraform/opentofu linter
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
