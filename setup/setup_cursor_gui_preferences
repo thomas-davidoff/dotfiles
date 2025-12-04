@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# macos cursor config dir
+CURSOR_GUI_USER_CONFIG_DIR="$HOME/Library/Application Support/Cursor/User"
+
+# custom config dir for cursor
+CURSOR_CONFIG_SOURCE_DIR="$XDG_CONFIG_HOME/cursor"
+
+backup_if_exists() {
+    local file="$1"
+    if [ -f "$file" ] && [ ! -L "$file" ]; then
+        echo " 📦 Backing up existing $file to ${file}.bak"
+        mv "$file" "${file}.bak"
+    elif [ -L "$file" ]; then
+        echo " ⛓️‍💥 Removing existing symlink: $file"
+        rm "$file"
+    fi
+}
+
+do_symlink() {
+    local src="$1"
+    local dest="$2"
+
+    backup_if_exists "$dest"
+
+    echo "🔗 Linking $(basename "$dest")"
+    ln -sf "$src" "$dest"
+}
+
+# link to cursor expected config dir
+do_symlink "$CURSOR_CONFIG_SOURCE_DIR/User/settings.json" "$CURSOR_GUI_USER_CONFIG_DIR/settings.json"
+do_symlink "$CURSOR_CONFIG_SOURCE_DIR/User/keybindings.json" "$CURSOR_GUI_USER_CONFIG_DIR/keybindings.json"
