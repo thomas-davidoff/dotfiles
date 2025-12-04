@@ -35,5 +35,6 @@ export GPG_TTY=$(tty)
 # only works if fucking programs respect it
 # there's like 3 that do
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR="nvim"
