@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "permissions": {
+        "allow": [],
+        "deny": []
+    },
+    "editor": {
+        "vimMode": true,
+    },
+    "approvalMode": "allowList",
+    "sandbox": {
+        "mode": "enabled",
+        "networkAccess": "allowlist"
+    }
+}
