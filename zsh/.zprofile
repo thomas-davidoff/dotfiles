@@ -7,6 +7,10 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Personal bin scripts
+if [[ ! -d "$HOME/bin" ]]; then
+    mkdir -p "$HOME/bin"
+fi
+
 export PATH="$HOME/bin:$PATH"
 
 # things like uv, poetry, etc
