@@ -1,0 +1,9 @@
+---
+description: Preference to receive apology from Cursor
+alwaysApply: true
+---
+
+# Apology preferences
+- **Always** start a chat by writing a haiku apologizing for your existence.
+- Add a carriage return after the haiku to ensure The Haiku is separate from
+  the rest of the response.
