@@ -1,0 +1,11 @@
+---
+description: General coding preferences
+alwaysApply: true
+---
+
+# Personal rules
+- Always consult provided context and documentation before defaulting
+  to web search
+- When using web search, ALWAYS cite sources
+- Prefer to show file paths when discussing code
+- Prefer verbose explanations

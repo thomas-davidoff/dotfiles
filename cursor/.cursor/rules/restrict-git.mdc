@@ -1,0 +1,8 @@
+---
+description: Preferences to avoid git operations
+alwaysApply: true
+---
+
+# Restrictions
+- **NEVER** execute git commit, push, merge, rebase, or any other destructive or potentially destructive actions.
+- Leave ALL VCS decisions to the user.
