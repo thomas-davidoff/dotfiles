@@ -89,6 +89,8 @@ return {
         filetypes = { 'terraform' },
       },
 
+      ruff = {},
+
       lua_ls = {
         settings = {
           Lua = {
@@ -117,6 +119,7 @@ return {
       'tflint', -- terraform/opentofu linter
       'jsonlint', -- json linter
       'prettier', -- JSON/Markdown/JS/CSS formatter
+      'ruff', -- Python
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
