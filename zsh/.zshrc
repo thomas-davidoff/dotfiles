@@ -16,7 +16,20 @@ fi
 
 # fpath changes
 fpath+=~/.zfunc
-fpath=($HOME/.docker/completions $fpath)
+
+# docker completion
+# See: https://docs.docker.com/engine/cli/completion/
+docker_completions_dir="$HOME/.docker/completions"
+if [[ ! $(command -v docker) ]]; then
+  print -P "%B%F{yellow}Warning: docker is not installed%f%b"
+elif [[ ! -d "$docker_completions_dir" ]]; then
+  echo "Adding docker completions...."
+  mkdir -p "$docker_completions_dir"
+  docker completion zsh > "$docker_completions_dir/_docker"
+fi
+# add docker completions to fpath
+fpath=("$HOME/.docker/completions" $fpath)
+
 
 # move compinit dump file to cache dir
 autoload -Uz compinit
