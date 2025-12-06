@@ -4,7 +4,10 @@
 
 return {
   -- Detect tabstop and shiftwidth automatically
-  'NMAC427/guess-indent.nvim',
+  {
+    'NMAC427/guess-indent.nvim',
+    opts = {},
+  },
 
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   -- See `:help gitsigns` to understand what the configuration keys do

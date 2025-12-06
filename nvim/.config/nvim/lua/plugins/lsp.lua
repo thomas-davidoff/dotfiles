@@ -116,6 +116,7 @@ return {
       'shfmt', -- Shell formatter
       'tflint', -- terraform/opentofu linter
       'jsonlint', -- json linter
+      'prettier', -- JSON/Markdown/JS/CSS formatter
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
