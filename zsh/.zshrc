@@ -5,10 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-cache_dir="$XDG_CACHE_HOME/zsh"
+# create zsh cache
+zsh_cache_dir="$XDG_CACHE_HOME/zsh"
 
-if [[ ! -d "$cache_dir" ]]; then
-  mkdir -p "$cache_dir"
+if [[ ! -d "$zsh_cache_dir" ]]; then
+  mkdir -p "$zsh_cache_dir"
 fi
 
 [[ -z "$SHORT_HOST" ]] && SHORT_HOST="${HOST/.*/}"
@@ -19,12 +20,12 @@ fpath=($HOME/.docker/completions $fpath)
 
 # move compinit dump file to cache dir
 autoload -Uz compinit
-export ZSH_COMPDUMP="$cache_dir/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+export ZSH_COMPDUMP="$zsh_cache_dir/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 compinit -d "$ZSH_COMPDUMP"
 
 # enable completion caching for zstyles
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$cache_dir/.zcompcache"
+zstyle ':completion:*' cache-path "$zsh_cache_dir/.zcompcache"
 
 # enable bash-style completions (for aws cli and shit)
 autoload -U bashcompinit && bashcompinit
