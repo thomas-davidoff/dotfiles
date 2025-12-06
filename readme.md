@@ -76,7 +76,7 @@ If I wanted to, I could copy what I wanted from my old config to the appropriate
 location after running stow. With that said, run:
 
 ```sh
-stow homebrew kitty nvim zsh
+stow bin cursor homebrew kitty nvim zsh
 ```
 
 Voila. Now you have symlinked config files:
@@ -86,7 +86,19 @@ ls -l ~/.zshrc
 lrwxr-xr-x@ 1 schleeb  staff  19 Jun  9 23:31 /Users/schleeb/.zshrc -> dotfiles/zsh/.zshrc
 ```
 
-### 6. Open kitty
+### 6. Setup Cursor GUI preferences
+
+Cursor stores its GUI settings in `~/Library/Application Support/Cursor/User/`,
+which is separate from the CLI/rules config that stow handles. Run the setup
+script to symlink the GUI settings:
+
+```sh
+./setup/setup_cursor_gui_preferences
+```
+
+This will back up any existing settings and create symlinks to the stowed config.
+
+### 7. Open kitty
 
 When you open Kitty, you should be pretty much completely good to go. You may
 see a warning from p10k telling you that it detected console output during
@@ -94,6 +106,13 @@ initialization. This is likely because you don't have extra things installed
 like uv for Python management. See below.
 
 ## Additional setup
+
+### Personal scripts
+
+The `bin/` stow package adds `~/.local/bin` scripts to your PATH. Currently includes:
+
+- `fif` - Interactive file search using fzf and ripgrep. Run `fif` or `fif <folder>`
+  to search file contents interactively with live preview.
 
 ### Install uv for Python management
 
